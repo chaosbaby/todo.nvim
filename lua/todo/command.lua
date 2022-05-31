@@ -53,3 +53,8 @@ end, {
     return table.diff(str_priorities, selected)
   end,
 })
+
+local highlight = require("todo.highlight")
+vim.api.nvim_create_user_command("TodoHlToggle", function(_)
+  highlight.toggleHighlight()
+end, {})
