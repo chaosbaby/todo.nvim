@@ -11,4 +11,10 @@
 
 ## make code clean
 1. - [C] clean config @cancel(2022-05-31 15:58) @used(5m)
+2. - [ ] module display to show todo items @start(2022-05-31 21:03) 
+   1. - [X] qflist @finish(2022-05-31 21:06)
+   2. - [X] trouble @finish(2022-05-31 21:06)
+   3. - [X] fzf @finish(2022-05-31 21:38)
+   4. - [C] telescope @cancel(2022-05-31 22:08)
+
 
