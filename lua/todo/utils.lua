@@ -24,7 +24,7 @@ end
 -- two list table difference
 function table.diff(t1, t2)
   local ret = {}
-  for _, v in pairs(t1) do
+  for _, v in ipairs(t1) do
     if table.contains(t2, v) == false then
       table.insert(ret, v)
     end

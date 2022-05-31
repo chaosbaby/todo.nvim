@@ -27,15 +27,18 @@ end, {
   complete = function(_, l, _)
     local completions = vim.tbl_keys(config.keywords)
     local selected = vim.split(l, " ")
-    return table.diff(completions, selected)
-    -- return completions
+    local difComp = table.diff(completions, selected)
+    table.sort(difComp, function(a, b)
+      return config.keywords[a].priority > config.keywords[b].priority
+    end)
+    return difComp
   end,
 })
 
 vim.api.nvim_create_user_command("TodoGrepPri", function(com)
   local priorities = com.fargs
-  local keywords = table.get_elements_with_keys(config.keywords_group, priorities)
-  print(vim.inspect(keywords))
+  local num_priorities = table.map(priorities, tonumber)
+  local keywords = table.get_elements_with_keys(config.keywords_group, num_priorities)
   local reg = table.concat(keywords, "|")
   local pattern = [[@(KEYWORDS)]]
   reg = string.gsub(pattern, "KEYWORDS", reg)
