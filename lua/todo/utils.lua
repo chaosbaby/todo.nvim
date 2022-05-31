@@ -1,3 +1,4 @@
+local M = {}
 --group table by key
 function table.group(tbl, key)
   local ret = {}
@@ -71,3 +72,34 @@ function table.map(tbl, func)
   end
   return ret
 end
+
+-- lua table to string
+function table.to_string(tbl)
+  local result = ""
+  for k, v in pairs(tbl) do
+    result = result .. k .. "=" .. tostring(v) .. " "
+  end
+  return result
+end
+
+-- create toggle function with two functions
+
+function M.createToggle(func1, func2)
+  local status = true
+  local toggle_fun = function(enabled)
+    if enabled == true or enabled == false then
+      status = enabled
+    end
+    local exefun
+    if status then
+      exefun = func1
+    else
+      exefun = func2
+    end
+    status = not status
+    return exefun()
+  end
+  return toggle_fun
+end
+
+return M
