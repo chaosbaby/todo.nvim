@@ -161,5 +161,7 @@ keymap("n", "<Leader>mc", "<cmd>lua NvimTodoChange('cancel','n')<CR>", opts)
 keymap("x", "<Leader>mc", "<cmd>lua NvimTodoChange('cancel','v')<CR>", opts)
 keymap("n", "<Leader>mk", "<cmd>lua NvimTodoChange('tinit','n')<CR>", opts)
 keymap("x", "<Leader>mk", "<cmd>lua NvimTodoChange('tinit','v')<CR>", opts)
+keymap("n", "<Leader>ml", "<cmd>lua NvimTodoChange('clean','n')<CR>", opts)
+keymap("x", "<Leader>ml", "<cmd>lua NvimTodoChange('clean','v')<CR>", opts)
 
 return M

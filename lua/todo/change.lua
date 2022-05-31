@@ -71,8 +71,11 @@ local function todoChange(line, keyWord, _todo_tbl)
   local header = _todo_tbl[keyWord].stateBox
   local subStr = string.sub(clearedLine, eIndex + 1)
 
-  local ret = spaceHeader .. header .. subStr .. addTimeTag(keyWord) .. newTimeTag(line)
-  return ret
+  if header == "" then
+    return string.format("%s%s", spaceHeader, subStr)
+  else
+    return spaceHeader .. header .. subStr .. addTimeTag(keyWord) .. newTimeTag(line)
+  end
 end
 
 M.todoChange = todoChange

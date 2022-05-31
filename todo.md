@@ -8,6 +8,7 @@
 
 ## imp ##
 1. - [X] cmd TodoGrep completions list with priority  @finish(2022-05-31 15:51) @used(346m)
+2. - [X] add todo change state clean , make it into original pure line @finish(2022-05-31 22:18)
 
 ## make code clean
 1. - [C] clean config @cancel(2022-05-31 15:58) @used(5m)
